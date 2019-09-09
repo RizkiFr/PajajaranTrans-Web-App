@@ -77,7 +77,7 @@ export default {
         if (this.$refs.form.validate()) {
           this.snackbar = true,
           this.loading = true,
-          axios.post('https://domain.com/public/api/auth/login',this.user)
+          axios.post('https://api.pajajarantrans.co.id/public/api/auth/login',this.user)
           .then(response => {
               sessionStorage.setItem('access_token', response.data.access_token);
               axios.defaults.headers.common['Authorization'] = 'Bearer '+sessionStorage.getItem('access_token');

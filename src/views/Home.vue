@@ -91,7 +91,7 @@ export default {
     }},
     logout(){
       this.loading = true,
-      this.axios.get('https://domain.com/public/api/auth/logout')
+      this.axios.get('https://api.pajajarantrans.co.id/public/api/auth/logout')
       // eslint-disable-next-line
       .then(response => {
         sessionStorage.clear();

@@ -87,7 +87,7 @@ export default {
     methods:{
         async getList(){
             this.loading= true
-            axios.get('https://domain.com/public/api/auth/perjalanan/'+this.$route.params.id)
+            axios.get('https://api.pajajarantrans.co.id/public/api/auth/perjalanan/'+this.$route.params.id)
             .then((response)=>{
                 this.perjalanan = response.data.data[0]
                 this.loading = false

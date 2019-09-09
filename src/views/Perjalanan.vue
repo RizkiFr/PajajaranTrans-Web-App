@@ -24,7 +24,7 @@
                             </v-flex>
                             <v-flex xs6>
                                 <div class="subheading font-weight-medium text-xs-right success--text">Rp. 120.000,-</div>
-                                <div class="subheading font-weight-medium text-xs-right">Tersedia {{5 - perjalanan.jumlahPenumpang}} Kursi</div>
+                                <div class="subheading font-weight-medium text-xs-right">Tersedia {{perjalanan.sisa_kursi}} Kursi</div>
                             </v-flex>
                         </v-layout>
                     </v-card-text>
@@ -57,7 +57,7 @@ export default {
     methods:{
         async getList() {
             this.loading = true
-            axios.get('https://domain.com/public/api/auth/perjalanan?tanggal='+this.$store.state.cari.tglBerangkat+'&kota_asal='+this.$store.state.cari.kota_asal+' &kota_tujuan='+this.$store.state.cari.kota_tujuan+'&jumlahPenumpang='+this.$store.state.cari.penumpang)
+            axios.get('http://api.pajajarantrans.co.id/public/api/perjalanan?tanggal='+this.$store.state.cari.tglBerangkat+'&kota_asal='+this.$store.state.cari.kota_asal+' &kota_tujuan='+this.$store.state.cari.kota_tujuan+'&jumlahPenumpang='+this.$store.state.cari.penumpang)
                 .then((response) => {(this.perjalanans = response.data.data)
                 this.loading = false
                 })

@@ -186,7 +186,7 @@ export default {
         this.isLoading = true
         if (this.$refs.form.validate()) {
             this.snackbar = true
-            axios.post('https://domain.com/public/api/auth/order',this.pemesans)
+            axios.post('https://api.pajajarantrans.co.id/public/api/auth/order',this.pemesans)
                 .then(response => {
                     this.snapToken = response.data.snapToken,
                     this.isLoading = false
@@ -202,7 +202,7 @@ export default {
             })
         }},
         async getList(){
-            axios.get('https://domain.com/public/api/auth/perjalanan/'+this.$route.params.id)
+            axios.get('https://api.pajajarantrans.co.id/public/api/auth/perjalanan/'+this.$route.params.id)
             .then((response) => {
                 (this.perjalanan = response.data.data[0])
                 
@@ -217,12 +217,13 @@ export default {
             this.getAlamat.action = 'antar'
         },
         setAlamat(){
-            if(this.getAlamat.action == 'jemput'){
-                this.pemesans.alamat_jemput = this.getAlamat.location.lat
-            }else{
-                this.pemesans.alamat_antar = this.getAlamat.location.lat
-            }
-            this.getAlamat.dialog = false
+            // if(this.getAlamat.action == 'jemput'){
+            //     this.pemesans.alamat_jemput = this.getAlamat.location.lat
+            // }else{
+            //     this.pemesans.alamat_antar = this.getAlamat.location.lat
+            // }
+            // this.getAlamat.dialog = false
+            console.log(this.getAlamat)
         },
         pay(){
             this.a = false,
